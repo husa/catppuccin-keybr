@@ -2,6 +2,7 @@
   "name": "catppuccin-keybr",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/husa/catppuccin-keybr#readme",
   "description": "",
   "dependencies": {
-    "@catppuccin/palette": "^1.7.1"
+    "@catppuccin/palette": "^1.7.1",
+    "archiver": "^7.0.1"
   }
 }

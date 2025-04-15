@@ -1,4 +1,5 @@
 import fs from "fs";
+import archiver from "archiver";
 import { flavorEntries } from "@catppuccin/palette";
 
 // Reference - mocha
@@ -42,11 +43,11 @@ const themeConfig = {
   "--secondary-l2": "text",
   "--secondary-f1": "subtext1",
   "--secondary-f2": "subtext0",
-  // "--accent-d2": "",
-  // "--accent-d1": "",
+  // "--accent-d2": "", // not used anywhere
+  "--accent-d1": "subtext0", // --MenuItem--selected__background-color
   "--accent": "mauve",
-  // "--accent-l1": "",
-  // "--accent-l2": "",
+  "--accent-l1": "subtext1", // --MenuItem__background-color
+  "--accent-l2": "text", // --MenuItem--hover__background-color
   // "--error-d1": "",
   // "--error": "",
   // "--error-l1": "",
@@ -80,8 +81,9 @@ const themeConfig = {
   "--syntax-comment": "overlay2",
 };
 
-flavorEntries.forEach((flavor) => {
+flavorEntries.forEach(async (flavor) => {
   const [name, palette] = flavor;
+  console.log(`Generating theme for "${name}"`);
   const theme = Object.entries(themeConfig).reduce((acc, [key, value]) => {
     try {
       acc[key] = palette.colors[value].hex;
@@ -92,7 +94,14 @@ flavorEntries.forEach((flavor) => {
     }
     return acc;
   }, {});
+  console.log(`"${name}" theme assembled. Creating archive...`);
 
-  fs.mkdirSync(name, { recursive: true });
-  fs.writeFileSync(`${name}/theme.json`, JSON.stringify(theme, null, 2));
+  const output = fs.createWriteStream(`${name}.keybr-theme`);
+  const archive = archiver("zip");
+  archive.pipe(output);
+  archive.append(JSON.stringify(theme), { name: "theme.json" });
+  archive.on("finish", () => {
+    console.log(`"${name}.keybr-theme" created.`);
+  });
+  await archive.finalize();
 });
