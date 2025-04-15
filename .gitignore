@@ -1,3 +1,5 @@
+*.keybr-theme
+
 # Logs
 logs
 *.log
