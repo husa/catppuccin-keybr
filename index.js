@@ -81,6 +81,8 @@ const themeConfig = {
   "--syntax-comment": "overlay2",
 };
 
+const BUILD_DIR = "build";
+
 flavorEntries.forEach(async (flavor) => {
   const [name, palette] = flavor;
   console.log(`Generating theme for "${name}"`);
@@ -96,12 +98,15 @@ flavorEntries.forEach(async (flavor) => {
   }, {});
   console.log(`"${name}" theme assembled. Creating archive...`);
 
-  const output = fs.createWriteStream(`${name}.keybr-theme`);
+  if (!fs.existsSync(BUILD_DIR)) {
+    fs.mkdirSync(BUILD_DIR);
+  }
+  const output = fs.createWriteStream(`${BUILD_DIR}/${name}.keybr-theme`);
   const archive = archiver("zip");
   archive.pipe(output);
   archive.append(JSON.stringify(theme), { name: "theme.json" });
   archive.on("finish", () => {
-    console.log(`"${name}.keybr-theme" created.`);
+    console.log(`"${BUILD_DIR}/${name}.keybr-theme" created.`);
   });
   await archive.finalize();
 });

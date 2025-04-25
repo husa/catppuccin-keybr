@@ -1,10 +1,14 @@
 {
   "name": "catppuccin-keybr",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node index.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",
@@ -16,7 +20,7 @@
     "url": "https://github.com/husa/catppuccin-keybr/issues"
   },
   "homepage": "https://github.com/husa/catppuccin-keybr#readme",
-  "description": "",
+  "description": "⌨️ Soothing pastel theme for keybr",
   "dependencies": {
     "@catppuccin/palette": "^1.7.1",
     "archiver": "^7.0.1"
