@@ -47,9 +47,9 @@
 <!-- - Q: **_"How can I do X?"_**\ -->
 <!--   A: ... -->
 
-<!-- ## 💝 Thanks to -->
-<!---->
-<!-- - [Human](https://github.com/catppuccin) -->
+## 💝 Thanks to
+
+- [husa](https://github.com/husa)
 
 &nbsp;
 
