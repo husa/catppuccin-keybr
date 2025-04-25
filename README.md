@@ -11,9 +11,9 @@
 	<a href="https://github.com/husa/catppuccin-keybr/contributors"><img src="https://img.shields.io/github/contributors/husa/catppuccin-keybr?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-<!-- <p align="center"> -->
-<!-- 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/previews/preview.webp"/> -->
-<!-- </p> -->
+<p align="center">
+	<img src="./assets/catwalk.webp"/>
+</p>
 
 ## Previews
 
