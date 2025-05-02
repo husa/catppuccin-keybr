@@ -36,9 +36,9 @@
 
 ## Usage
 
-1. Download the flavor of your choice from [Releases](https://github.com/husa/catppuccin-keybr/releases), for example [`mocha.keybr-theme`](https://github.com/husa/catppuccin-keybr/releases/latest/download/catppuccin-mocha.keybr-theme)
+1. Download the flavor of your choice from [Releases](https://github.com/husa/catppuccin-keybr/releases), for example [`catppuccin-mocha.keybr-theme`](https://github.com/husa/catppuccin-keybr/releases/latest/download/catppuccin-mocha.keybr-theme)
 2. Open [keybr.com](https://www.keybr.com) and go to **Theme settings(Moon/Sun icon)** > **Custom...** > **Import**
-3. Select the downloaded theme file - `mocha.keybr-theme`
+3. Select the downloaded theme file - `catppuccin-mocha.keybr-theme`
 
 <!-- The FAQ section is optional. Remove if needed.-->
 
