@@ -82,6 +82,7 @@ const themeConfig = {
 };
 
 const BUILD_DIR = "build";
+const FILENAME_PREFIX = "catppuccin";
 
 flavorEntries.forEach(async (flavor) => {
   const [name, palette] = flavor;
@@ -101,12 +102,13 @@ flavorEntries.forEach(async (flavor) => {
   if (!fs.existsSync(BUILD_DIR)) {
     fs.mkdirSync(BUILD_DIR);
   }
-  const output = fs.createWriteStream(`${BUILD_DIR}/${name}.keybr-theme`);
+  const filename = `${BUILD_DIR}/${FILENAME_PREFIX}-${name}.keybr-theme`;
+  const output = fs.createWriteStream(filename);
   const archive = archiver("zip");
   archive.pipe(output);
   archive.append(JSON.stringify(theme), { name: "theme.json" });
   archive.on("finish", () => {
-    console.log(`"${BUILD_DIR}/${name}.keybr-theme" created.`);
+    console.log(`"${filename}" created.`);
   });
   await archive.finalize();
 });
