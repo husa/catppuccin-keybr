@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/husa/catppuccin-keybr/compare/v1.0.0...v1.0.1) (2025-05-02)
+
+
+### Bug Fixes
+
+* update button and keys colors ([2134354](https://github.com/husa/catppuccin-keybr/commit/2134354d2daf4b6b94dc9aff0b45a50233440419))
+* use "catppuccin" prefix for generated files ([8d2b183](https://github.com/husa/catppuccin-keybr/commit/8d2b18316395ea39cfabf3c2a3ab9e69abc97422))
+
 ## 1.0.0 (2025-04-25)
 
 
